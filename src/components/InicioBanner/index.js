@@ -3,7 +3,7 @@ import Boton from "../Boton";
 
 export default function InicioBanner(){
     return(
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-center mx-5">
             <div className="w-1/2 m-5">
                 <img className="w-auto" src="https://media.istockphoto.com/vectors/qatar-2022-vector-id1304763669?b=1&k=20&m=1304763669&s=170667a&w=0&h=mkYgshSQ00THszwOU3QB7dLYhIYfJtNaeNGVfLM7KYg="/>
             </div>
