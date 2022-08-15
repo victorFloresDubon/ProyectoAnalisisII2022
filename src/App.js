@@ -1,12 +1,19 @@
-import Boton from "./components/Boton";
+import React, {useState, useEffect} from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  // De forma similar a componentDidMount y componentDidUpdate
+  useEffect(() => {
+  // Actualiza el título del documento usando la API del navegador
+  document.title = `You clicked ${count} times`;});
+
   return (
-    //asi mandamos un valor al componente, enviandole una variables
-    <div className="App">
-      <p>Inicio</p>
-      <Boton numero = "1"/> 
-      <Boton numero = "2"/>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
   );
 }
