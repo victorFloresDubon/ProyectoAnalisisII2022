@@ -1,6 +1,16 @@
-import React from "react";
+import { onValue, ref } from "firebase/database";
+import React, { useEffect } from "react";
+import { db } from "../../firebase/firebase";
 
 export default function Grupos(){
+    /*
+    useEffect(() => {
+        const gruposRef = ref(db, 'Grupos');
+        onValue(gruposRef, (snapshot) => {
+
+        })
+    })
+    */
     return(
         <div className="grid gap-4 grid-cols-4 grid-rows-2">
             <div className="w-1/2 m-5">

@@ -16,12 +16,16 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+export const db = getDatabase(app);
 
 export async function getGrupos(){
     let gruposRef = ref(db, 'Grupos');
     onValue(gruposRef, (snapshot) => {
-        console.log(snapshot.val());
-    })
+        snapshot.forEach(function(childSnapshot) {
+            console.log(childSnapshot.val().nombre);
+        })
+    }, {
+        onlyOnce: true
+    });
 }
 
