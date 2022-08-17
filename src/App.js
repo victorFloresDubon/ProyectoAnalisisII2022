@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import Body from "./components/Body";
 import InicioBanner from "./components/InicioBanner";
 import Grupos from "./components/Grupos";
+import { getGrupos } from "./firebase/firebase";
 
 function App() {
- 
+  getGrupos();
   return (
     <div>
       <InicioBanner/>
