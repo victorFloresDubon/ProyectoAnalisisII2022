@@ -20,12 +20,16 @@ export const db = getDatabase(app);
 
 export async function getGrupos(){
     let gruposRef = ref(db, 'Grupos');
+    let grupos = [];
     onValue(gruposRef, (snapshot) => {
         snapshot.forEach(function(childSnapshot) {
-            console.log(childSnapshot.val().nombre);
+            grupos.push(childSnapshot.val().nombre);
         })
     }, {
         onlyOnce: true
     });
+    
+    console.log(grupos);
+    return grupos;
 }
 

@@ -2,6 +2,12 @@ import { onValue, ref } from "firebase/database";
 import React, { useEffect } from "react";
 import { db } from "../../firebase/firebase";
 
+// Consume los datos desde la base de datos
+async function getGrupos(){
+    let gruposRef = ref(db, "Grupos");
+    
+}
+
 export default function Grupos(){
     /*
     useEffect(() => {
