@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Body from "./components/Body";
+import Body from "./components/InicioBanner/body";
 import InicioBanner from "./components/InicioBanner";
 import Grupos from "./components/Grupos";
 import { getGrupos } from "./firebase/firebase";
