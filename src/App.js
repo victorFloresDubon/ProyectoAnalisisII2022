@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Body from "./components/InicioBanner/body";
 import InicioBanner from "./components/InicioBanner";
 import Grupos from "./components/inicio/grupos";
