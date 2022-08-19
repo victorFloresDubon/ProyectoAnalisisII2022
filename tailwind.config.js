@@ -7,6 +7,11 @@ module.exports = {
     container: {
       center: true
     },
+    screens: {
+      'tablet':'640 px',
+      'laptop': '1024px',
+      'desktop': '1280px'
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

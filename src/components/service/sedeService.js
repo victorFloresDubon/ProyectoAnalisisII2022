@@ -8,10 +8,10 @@ export function getSede() {
     let sedes = [];
     get(child(dbRef, path)).then((snapshot) => {
         snapshot.forEach((sedeSnapshot) => {
-            sedes.push(sedeSnapshot.val());
+            sedes.push(sedeSnapshot);
         });
     }).catch((err) => {
-        console.log(err);
+        console.error(err);
     });
 
     return sedes;
