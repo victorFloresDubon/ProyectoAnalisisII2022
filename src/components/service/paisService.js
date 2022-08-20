@@ -12,7 +12,7 @@ const path = 'Paises';
  * Obtiene todos los países
  * @returns Array de SnapShot de Países
  */
-export async function getPaises(){
+export function getPaises(){
     let dbRef = ref(db)
     let paises = [];
     get(child(dbRef, path)).then((snapshot) => {
@@ -34,7 +34,7 @@ export async function getPaises(){
  * @param {*} grupoId 
  * @returns Array de SnapShot de Países
  */
-export async function getPaisesByGrupo(grupoId){
+export function getPaisesByGrupo(grupoId){
     let dbRef = ref(db);
     let paises = [];
     get(child(dbRef, path)).then((snapshot) => {
