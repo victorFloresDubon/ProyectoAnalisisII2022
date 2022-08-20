@@ -1,5 +1,4 @@
-import React from "react"
-import Grupos from "../Grupos"
+import React from "react";
 
 export default function Body(){
     return(
