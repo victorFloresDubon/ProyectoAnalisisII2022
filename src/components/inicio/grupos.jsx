@@ -16,6 +16,7 @@ export default function Grupos() {
             if (snapshot.val() !== null) {
                 snapshot.forEach((grupoSnapshot) => {
                     grupos.push(grupoSnapshot);
+                    console.log(grupoSnapshot.val());
                 });
             }
             setGruposData(grupos);
