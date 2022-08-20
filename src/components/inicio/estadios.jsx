@@ -34,7 +34,7 @@ export default function Estadios() {
                     {data.val().nombre}
                     <br/>
                     <br/>
-                    Descripción del estadio
+                    --*** Descripción del estadio ***--
                     </p>
                 </li>
                 )
