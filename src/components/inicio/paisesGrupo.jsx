@@ -4,7 +4,7 @@ import { db } from "../../firebase/firebase";
 
 export default function PaisesGrupo(grupo) {
 
-    const path = 'Paises';
+    const path = "Paises";
     const [paisesData, setPaisesData] = useState([]);
 
     useEffect(() => {
@@ -13,14 +13,13 @@ export default function PaisesGrupo(grupo) {
         get(child(dbRef, path)).then((snapshot) => {
             if(snapshot.exists()){
                 snapshot.forEach((paisSnapshot) => {
-                    console.log(paisSnapshot.val())
-                    if(paisSnapshot.val().grupoId === grupo){
+                    if(paisSnapshot.val().grupoId === grupo.grupo){
                         paises.push(paisSnapshot.val())
                     }
                     
                 })
             }
-            console.log(paises);
+            //console.log(paises);
             setPaisesData(paises);
         })
 
@@ -33,10 +32,12 @@ export default function PaisesGrupo(grupo) {
         <ul>
             {
             paisesData.map((data) => {
-                <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">
+                return (
+                <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold" key={data.key}>
                     <img src={data.img} alt={data.nombre}/>
                     {data.nombre}
                 </li>
+                )
             })
             }
         </ul>
