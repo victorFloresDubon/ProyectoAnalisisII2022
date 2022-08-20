@@ -5,7 +5,6 @@ import PaisesGrupo from "./paisesGrupo";
 
 const dbRef = ref(db);
 const pathGrupos = "Grupos";
-const pathPaises = "Paises";
 
 export default function Grupos() {
 
@@ -31,7 +30,7 @@ export default function Grupos() {
 
     return (
 
-        <div className="grid gap-4 grid-cols-4 grid-rows-2 md:grid-cols-6 flex-col">
+        <div className="p-4 grid gap-4 grid-cols-4 grid-rows-2 md:grid-cols-6 flex-col">
             {gruposData.map((data) => {
                 return (
                     <div className="w-1/2 m-5" key={data.key}>
@@ -46,41 +45,4 @@ export default function Grupos() {
 
     )
 
-}
-
-/**
- * Trae los países por su ID
- */
-function handlePaisesByGrupo(grupoId) {
-    let paises = [];
-    get(child(dbRef, pathPaises)).then((snapshot) => {
-        if (snapshot.exists()) {
-            snapshot.forEach((paisSnapshot) => {
-                // SI el grupoID es igual al grupoId de paisSnapshot ENTONCES lo agrega al arreglo
-                if (grupoId === paisSnapshot.val().grupoId) {
-                    paises.push(paisSnapshot.val());
-                }
-            })
-        }
-    });
-    return paises;
-    /*
-    if (paises.length > 0) {
-        return (
-            <>
-                {paises.map((data) => {
-                    console.log(data);
-                    return (
-                    <ul>
-                        <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">
-                            <img src={data.val().img} alt={data.val().nombre} />
-                            {data.val().nombre}
-                        </li>
-                    </ul>
-                    );
-                })}
-            </>
-        )
-    //}
-    */
 }

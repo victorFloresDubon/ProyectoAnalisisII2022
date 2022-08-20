@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */ 
 module.exports = {
+  darkMode: true,
+  mode: "jit",
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -8,7 +10,8 @@ module.exports = {
       center: true
     },
     screens: {
-      'tablet':'640 px',
+      'xs':'540px',
+      'tablet':'640px',
       'laptop': '1024px',
       'desktop': '1280px'
     },

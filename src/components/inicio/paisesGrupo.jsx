@@ -19,14 +19,13 @@ export default function PaisesGrupo(grupo) {
                     
                 })
             }
-            //console.log(paises);
             setPaisesData(paises);
         })
 
         return () => {
             setPaisesData([]);
         }
-    }, [])
+    }, []);
 
     return (
         <ul>
