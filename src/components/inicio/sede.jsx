@@ -1,7 +1,9 @@
+/**
+ * Sección de información de la sede
+ */
 import { child, get, ref } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
-import { getSede } from "../service/sedeService";
 import Boton from "./botonInicio";
 
 export default function Sede() {
@@ -16,6 +18,8 @@ export default function Sede() {
             } else {
                 setSedeData({});
             }
+        }).catch((err) => {
+            console.error(err);
         })
 
         return () => {
@@ -23,6 +27,7 @@ export default function Sede() {
         }
 
     }, []);
+    
     return (
         <>
             {Object.keys(sedeData).map((id) => {
