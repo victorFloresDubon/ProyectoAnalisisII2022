@@ -31,25 +31,14 @@ export default function Grupos() {
 
     return (
 
-        <div className="grid gap-4 grid-cols-4 grid-rows-2 md:grid-cols-6">
+        <div className="grid gap-4 grid-cols-4 grid-rows-2 md:grid-cols-6 flex-col">
             {gruposData.map((data) => {
                 return (
-                    <div className="grid grid-cols-4 w-1/2 m-5" key={data.key}>
+                    <div className="w-1/2 m-5" key={data.key}>
                         <h2 className="text-2xl font-extrabold bg-rose-900 rounded-md text-center text-white">
                             {data.val().nombre}
                         </h2>
                         <PaisesGrupo grupo={data.key}></PaisesGrupo>
-                        {handlePaisesByGrupo(data.key).map((pais) => {
-                            console.log(pais);
-                            return (
-                                <ul>
-                                    <li>
-                                        <img src={pais.img} alt={pais.nombre} />
-                                    </li>
-                                </ul>
-
-                            )
-                        })}
                     </div>
                 )
             })}

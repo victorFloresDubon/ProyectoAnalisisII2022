@@ -14,7 +14,7 @@ export default function PaisesGrupo(grupo) {
             if(snapshot.exists()){
                 snapshot.forEach((paisSnapshot) => {
                     if(paisSnapshot.val().grupoId === grupo.grupo){
-                        paises.push(paisSnapshot.val())
+                        paises.push(paisSnapshot)
                     }
                     
                 })
@@ -33,20 +33,13 @@ export default function PaisesGrupo(grupo) {
             {
             paisesData.map((data) => {
                 return (
-                <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold" key={data.key}>
-                    <img src={data.img} alt={data.nombre}/>
-                    {data.nombre}
+                <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold grid grid-cols-2" key={data.key}>
+                    <img src={data.val().img} alt={data.val().nombre} className="object-cover"/>
+                    {data.val().nombre}
                 </li>
                 )
             })
             }
         </ul>
-/*        <ul key={grupo}>
-            <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">Qatar</li>
-            <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">Ecuador</li>
-            <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">Senegal</li>
-            <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold">Paises Bajos</li>
-        </ul>
-        */
     );
 }
