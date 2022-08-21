@@ -2,7 +2,15 @@
   "name": "proyecto",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "homepage": "https://victorfloresdubon.github.io/ProyectoAnalisisII2022",
+=======
+<<<<<<< HEAD
+  "homepage": "https://victorfloresdubon.github.io/ProyectoAnalisisII2022/",
+=======
+  "homepage": "https://victorFloresDubon.github.io/ProyectoAnalisisII2022/",
+>>>>>>> fd523ba6fa15b7cd81a9720097e03019c963b6d9
+>>>>>>> 12ceea8ac3f72b7c2abe82de48486f1f8ed22c69
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -23,7 +31,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
+<<<<<<< HEAD
     "deploy": "gh-pages -d build"
+=======
+    "deploy": "gh-pages -b master -d build"
+>>>>>>> fd523ba6fa15b7cd81a9720097e03019c963b6d9
   },
   "eslintConfig": {
     "extends": [

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
 
 export default function Estadios() {
+    const path = "Estadios";
 
-    const path = 'Estadios';
     const [estadiosData, setEstadiosData] = useState([]);
 
     useEffect(() => {
@@ -24,11 +24,23 @@ export default function Estadios() {
         }
     }, []);
 
-
-
     return (
-        <div className="bg-corinto text-blanco">
-            Acá irán los estadios
-        </div>
+        <ul>
+            {
+            estadiosData.map((data) => {
+                return (
+                <li className="p-2 text-center border-2 bg-stone-300 border-red-600 border-solid rounded-lg font-bold grid grid-cols-2" key={data.key}>
+                    <img src={data.val().img} alt={data.val().nombre} className="object-cover"/>
+                    <p>
+                    {data.val().nombre}
+                    <br/>
+                    <br/>
+                    --*** Descripción del estadio ***--
+                    </p>
+                </li>
+                )
+            })
+            }
+        </ul>
     );
 }
