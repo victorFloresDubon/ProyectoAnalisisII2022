@@ -10,10 +10,10 @@ module.exports = {
       center: true
     },
     screens: {
-      'xs':'540px',
-      'tablet':'640px',
-      'laptop': '1024px',
-      'desktop': '1280px'
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
     },
     colors: {
       transparent: 'transparent',
