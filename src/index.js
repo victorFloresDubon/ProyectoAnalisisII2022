@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './tailwind.output.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Registro from './components/login/registro';
+import Login from './components/login/login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,6 +14,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App/>}/>
+      <Route path='/registro' element={<Registro/>}/>
+      <Route path='/login' element={<Login/>}/>
     </Routes>
   </BrowserRouter>
 );
