@@ -10,16 +10,21 @@ module.exports = {
       center: true
     },
     screens: {
-      'xs':'540px',
-      'tablet':'640px',
-      'laptop': '1024px',
-      'desktop': '1280px'
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
     },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      'corinto': '#881337',
-      'blanco': '#ffffff'
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        qatar1: '#1077c3',
+        qatar2: '#49bce3',
+        qatar3: '#fec310',
+        qatar4: '#56042c',
+        brightqatar4: '#BA095F'
+      }  
     }
   },
   plugins: [],
