@@ -29,7 +29,6 @@ export default function Grupos() {
     }, []);
 
     return (
-
         <div className="p-4 grid gap-4 grid-cols-4 grid-rows-2 md:grid-cols-6 flex-col-reverse">
             {gruposData.map((data) => {
                 return (
