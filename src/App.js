@@ -1,5 +1,5 @@
 import React from "react";
-import MenuNavbar from "./components/inicio/MenuNavbar";
+import Navbar from "./components/inicio/Navbar";
 /*
 import Body from "./components/InicioBanner/body";
 import Grupos from "./components/inicio/grupos";
@@ -22,7 +22,7 @@ function App() {
     </div></>
     */
    <>
-   <MenuNavbar />
+   <Navbar />
    </>
   );
 }

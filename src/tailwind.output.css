@@ -917,6 +917,15 @@ button:hover {
   background-color: rgb(186 9 95 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-transparent:hover {
+  background-color: transparent;
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:text-4xl {
     font-size: 2.25rem;
