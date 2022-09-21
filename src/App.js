@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import Paises from "./components/Paises";
 import Sede from "./components/Sede";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
    <>
    <Navbar />
    <Sede />
+   <Paises />
    </>
   );
 }

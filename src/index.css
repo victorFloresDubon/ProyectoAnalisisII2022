@@ -14,4 +14,10 @@
     hover:bg-brightqatar4 rounded-md hover:text-yellow-50
   }
 
+  input[type="submit"] {
+    @apply text-yellow-50 border bg-qatar4 border-qatar4 
+    hover:bg-brightqatar4 rounded-md hover:text-yellow-50
+  }
+  
+
 }
