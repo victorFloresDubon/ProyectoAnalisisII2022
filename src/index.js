@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './tailwind.output.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Registro from './components/login/registro';
-import Login from './components/login/login';
+import Registro from './components/login/Registro';
+import Login from './components/login/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
