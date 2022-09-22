@@ -11,7 +11,7 @@ import Login from './components/login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <Router basename={process.env.REACT_APP_BASENAME}>
     <Routes>
       <Route path='/' element={<App/>}/>
       <Route path='/registro' element={<Registro/>}/>
