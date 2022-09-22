@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
-import {Link as lnk} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import {
     HiOutlineX,
     HiOutlineUserCircle,
@@ -9,7 +8,6 @@ import {
     HiUserGroup,
     HiOutlineOfficeBuilding
 } from 'react-icons/hi';
-
 import {
     FcMenu,
     FcHome,
@@ -22,6 +20,12 @@ function Navbar() {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
     const handleClose = () => setNav(!nav);
+
+    const navigate = useNavigate();
+
+    const loginNav = () => {
+        navigate('/login');
+    }
 
     return (
         <div className='w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg'>
@@ -65,8 +69,8 @@ function Navbar() {
                 </div>
                 <div className="hidden md:flex pr-4">
                     <button className='px-8 py-3 bg-transparent text-black mr-4 hover:bg-transparent
-                     hover:text-black flex items-center justify-center'>
-                        <lnk></lnk>
+                     hover:text-black flex items-center justify-center'
+                     onClick={loginNav}>
                         Login
                         <HiLogin className='w-5' />
                     </button>
@@ -112,10 +116,9 @@ function Navbar() {
                 </li>
                 <div className="flex flex-col my-4">
                     <button className="bg-transparent text-black px-8 py-3 mb-4 
-                    hover:bg-transparent hover:text-black flex justify-center items-center">
-                        <lnk to={'/login'}>
-                            Login
-                        </lnk>
+                    hover:bg-transparent hover:text-black flex justify-center items-center"
+                    onClick={loginNav}>
+                        Login
                         <HiLogin className='w-8' />
                     </button>
                     <button className='px-8 py-3 flex justify-center items-center'>
