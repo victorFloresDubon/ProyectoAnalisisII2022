@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import { Link  as lnk} from 'react-router-dom';
+import { Link } from 'react-scroll';
+import {Link as lnk} from 'react-router-dom';
 
 import {
     HiOutlineX,
@@ -66,6 +66,7 @@ function Navbar() {
                 <div className="hidden md:flex pr-4">
                     <button className='px-8 py-3 bg-transparent text-black mr-4 hover:bg-transparent
                      hover:text-black flex items-center justify-center'>
+                        <lnk></lnk>
                         Login
                         <HiLogin className='w-5' />
                     </button>
@@ -112,7 +113,9 @@ function Navbar() {
                 <div className="flex flex-col my-4">
                     <button className="bg-transparent text-black px-8 py-3 mb-4 
                     hover:bg-transparent hover:text-black flex justify-center items-center">
-                        <lnk>Login</lnk>
+                        <lnk to={'/login'}>
+                            Login
+                        </lnk>
                         <HiLogin className='w-8' />
                     </button>
                     <button className='px-8 py-3 flex justify-center items-center'>
