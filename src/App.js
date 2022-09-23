@@ -1,15 +1,19 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Paises from "./components/Paises";
-import Sede from "./components/Sede";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/login/Login";
+import Registro from "./components/login/Registro";
+
 
 function App() {
   return (
-   <>
-   <Navbar />
-   <Sede />
-   <Paises />
-   </>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+      </Routes>
+    </>
   );
 }
 
