@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Sede from './Sede';
 import Paises from './Paises';
+import Grupos from './Grupos';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
         <Navbar />
         <Sede />
         <Paises />
+        <Grupos />
         </>
     );
 };
