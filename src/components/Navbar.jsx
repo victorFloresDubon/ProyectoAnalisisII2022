@@ -27,6 +27,10 @@ function Navbar() {
         navigate('/login');
     }
 
+    const registroNav = () => {
+        navigate('/registro');
+    }
+
     return (
         <div className='w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg'>
             <div className="px-2 flex justify-between items-center w-full h-full">
@@ -74,7 +78,8 @@ function Navbar() {
                         Login
                         <HiLogin className='w-5' />
                     </button>
-                    <button className='px-8 py-3 flex justify-center items-center'>
+                    <button className='px-8 py-3 flex justify-center items-center'
+                    onClick={registroNav}>
                         <HiOutlineUserCircle className='w-5' />
                         Registrarme
                     </button>
@@ -121,7 +126,8 @@ function Navbar() {
                         Login
                         <HiLogin className='w-8' />
                     </button>
-                    <button className='px-8 py-3 flex justify-center items-center'>
+                    <button className='px-8 py-3 flex justify-center items-center'
+                    onClick={registroNav}>
                         <HiOutlineUserCircle className='w-8' />
                         Registrarme
                     </button>
