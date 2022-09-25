@@ -29,12 +29,11 @@ export default function Grupos() {
     }, []);
 
     return (
-        <div name="grupos" className="w-full my-32 mb-8 bg-qatar4 mt-24">
+        <div name="grupos" className="w-full my-32 pb-6 bg-qatar4">
             <div className="max-w-[1240px] mx-auto relative">
                 <div className='text-center'>
                     <h2 className='text-5xl font-bold text-white'>Grupos</h2>
                 </div>
-
                 <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-4 px-4 pt-12 sm:pt-20">
                     {gruposData.map((data) => {
                         return (
