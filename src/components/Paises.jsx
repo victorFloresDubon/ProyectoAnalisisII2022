@@ -1,5 +1,5 @@
 import { child, get, ref } from 'firebase/database';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { db } from '../firebase/firebase';
 
@@ -7,7 +7,7 @@ function Paises() {
     const path = "Paises";
     const [paisesData, setPaisesData] = useState([]);
 
-    useState(() => {
+    useEffect(() => {
         let dbRef = ref(db);
         let paises = [];
         get(child(dbRef, path)).then((snapshot) => {

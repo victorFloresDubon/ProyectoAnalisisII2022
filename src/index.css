@@ -19,5 +19,8 @@
     hover:bg-brightqatar4 rounded-md hover:text-yellow-50
   }
   
-
+  .dropzone {
+    @apply text-center p-5 border border-dashed border-brightqatar4 bg-slate-300
+    text-zinc-600
+  }
 }

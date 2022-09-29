@@ -1,7 +1,24 @@
 import React from 'react';
-import { HiLogin, HiUserCircle } from 'react-icons/hi'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { HiLogin, HiUserCircle } from 'react-icons/hi';
+import authService from '../../service/auth.service';
 
 const Login = () => {
+
+    const[usuarioActual, setUsuarioActual] = useState({});
+    useEffect(() => {
+        let usuario = authService.getUsuarioActual();
+        if(usuario){
+            setUsuarioActual(usuario);
+        }
+    })
+
+    const logout = () => {
+        authService.logout();
+    }
+
+
     return (
         <div className="w-full h-screen bg-zinc-200 dark:bg-gray-900 justify-center">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
