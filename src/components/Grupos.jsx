@@ -37,7 +37,7 @@ export default function Grupos() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-4 px-4 pt-12 sm:pt-20">
                     {gruposData.map((data) => {
                         return (
-                            <div className="bg-slate-300 rounded-xl shadow-2xl">
+                            <div className="bg-slate-300 rounded-xl shadow-2xl" key={data.key}>
                                 <div className="text-center text-black font-bold">
                                     <h2>{data.val().nombre}</h2>
                                 </div>
