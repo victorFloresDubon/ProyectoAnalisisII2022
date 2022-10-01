@@ -7,12 +7,16 @@ import { useState } from 'react';
 import usuarioService from '../service/usuario.service';
 import cloudynaryService from '../service/cloudinary.service';
 import Swal from 'sweetalert2';
-import 'animate.css'
+import 'animate.css';
+import { useNavigate } from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 const Registro = () => {
 
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm();
     const [files, setFiles] = useState([]);
+    const navigate = useNavigate();
+
     const [estado, setEstado] = useState({
         mensaje: '',
         successful: true
@@ -53,7 +57,7 @@ const Registro = () => {
         )
     });
 
-    const mostrarAlerta = () => {
+    const mostrarAlertaError = () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -66,9 +70,25 @@ const Registro = () => {
                 popup: 'animate__animated animate__backOutUp'
             }
         })
+    };
+
+    const mostrarAlertaRegistroUsuario = () => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Cuenta creada!',
+            text: "Usuario registrado exitosamente!",
+            showConfirmButton: false,
+            timer: 2000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutDown'
+            }
+        })
     }
 
-    const onSubmit = (data, event) => {
+    const onSubmit = data => {
         console.log(data);
         usuarioService.signUp(data.nombre, data.password, data.confpwd)
             .then((res) => {
@@ -81,10 +101,9 @@ const Registro = () => {
                                 .upload(res.data, data.file)
                                 .then((res) => {
                                     console.log(res);
-                                    setEstado({
-                                        mensaje: "Usuario registrado exitosamente",
-                                        successful: true
-                                    });
+                                    mostrarAlertaRegistroUsuario();
+                                    // Direcciona a la página de login
+                                    navigate("/login");
                                 })
                                 .catch((err) => {
                                     console.log(err);
@@ -110,14 +129,18 @@ const Registro = () => {
                         successful: false
                     });
                     console.log(estado.mensaje);
-                    mostrarAlerta();
+                    mostrarAlertaError();
                 }
             });
 
     }
 
     return (
-        <div className="w-full h-screen bg-zinc-200 dark:bg-gray-900 justify-center">
+        <motion.div className="w-full h-screen bg-zinc-200 dark:bg-gray-900 justify-center"
+        initial={{width: 0}}
+        animate={{ width: "100%"}}
+        exit={{ x: window.innerWidth, transition: {duration: 0.1}}}        
+        >
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 
                 dark:bg-gray-800 dark:border-gray-700">
@@ -216,7 +239,7 @@ const Registro = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
 
     );
 };
