@@ -23,4 +23,25 @@
     @apply text-center p-5 border border-dashed border-brightqatar4 bg-slate-300
     text-zinc-600
   }
+
+  .input-required {
+    @apply border-2 border-l-4 border-rose-500 bg-rose-200 text-gray-900 sm:text-sm rounded-lg
+    block w-full p-2.5
+  }
+
+  .thumbsContainer {
+    @apply flex flex-row flex-wrap mt-4
+  }
+
+  .thumb {
+    @apply inline-flex rounded-sm border border-solid mb-2 mr-2 h-24 w-24 p-1 box-border
+  }
+
+  .thumbInner {
+    @apply flex min-w-0 overflow-hidden
+  }
+
+  .img{
+    @apply block w-auto h-full
+  }
 }

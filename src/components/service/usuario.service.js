@@ -9,7 +9,14 @@ class UsuarioService {
      * @param {Object} nuevoUsuario 
      * @returns 
      */
-    signUp(nuevoUsuario){
+    signUp(email, password, confpassword){
+
+        let nuevoUsuario = {
+            nombre: email,
+            password: password,
+            confpwd: confpassword
+        };
+        
         return http.post(`${URL}/signUp`, nuevoUsuario);
     }
 
@@ -38,6 +45,17 @@ class UsuarioService {
     getCurrentUser(){
         return JSON.parse(localStorage.getItem("user"));
     }
+
+    async getIdByNombre(nombre){
+        let params = {
+            nombre: nombre
+        }
+        const res = await http.get(`${URL}/findByNombre`, {
+            params: params
+        });
+
+        return res;
+    }
 }
 
-export default new UsuarioService;
+export default new UsuarioService();
