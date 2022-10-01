@@ -6,10 +6,10 @@ import authService from '../../service/auth.service';
 
 const Login = () => {
 
-    const[usuarioActual, setUsuarioActual] = useState({});
+    const [usuarioActual, setUsuarioActual] = useState({});
     useEffect(() => {
         let usuario = authService.getUsuarioActual();
-        if(usuario){
+        if (usuario) {
             setUsuarioActual(usuario);
         }
     })
@@ -20,18 +20,17 @@ const Login = () => {
 
 
     return (
-        <div className="w-full h-screen bg-zinc-200 dark:bg-gray-900 justify-center">
+        <div className="w-full h-screen bg-zinc-200 dark:bg-gray-900 justify-center flex flex-col">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <HiUserCircle className='w-10 h-10' />
-                <h1 className="py-3 text-3xl md:text-4xl font-bold">
-                    Inicio de Sesión
-                </h1>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 
                 dark:bg-gray-800 dark:border-gray-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Inicia sesión en tu cuenta
-                        </h1>
+                        <div className="flex flex-col text-center items-center">
+                            <HiUserCircle className='w-10 h-10' />
+                            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                Inicio de Sesión
+                            </h1>
+                        </div>
                         <form className="space-y-4 md:space-y-6" action="#">
                             <div>
                                 <label htmlFor='email' className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
