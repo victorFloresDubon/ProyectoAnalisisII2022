@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.33deb4b8.css",
-    "main.js": "./static/js/main.761d3d93.js",
+    "main.css": "./static/css/main.0f156352.css",
+    "main.js": "./static/js/main.cb241322.js",
     "static/media/bg-qatar.png": "./static/media/bg-qatar.79a04fb2ac505e675366.png",
     "static/media/qatar2022.svg": "./static/media/qatar2022.70e17e6b7456bf5b816687f08950b806.svg",
     "index.html": "./index.html",
-    "main.33deb4b8.css.map": "./static/css/main.33deb4b8.css.map",
-    "main.761d3d93.js.map": "./static/js/main.761d3d93.js.map"
+    "main.0f156352.css.map": "./static/css/main.0f156352.css.map",
+    "main.cb241322.js.map": "./static/js/main.cb241322.js.map"
   },
   "entrypoints": [
-    "static/css/main.33deb4b8.css",
-    "static/js/main.761d3d93.js"
+    "static/css/main.0f156352.css",
+    "static/js/main.cb241322.js"
   ]
 }
